@@ -1,0 +1,1 @@
+"use client";import{t as e}from"./TypedPrompt.DsHGLlYA.js";export{e as default};

@@ -1,0 +1,1 @@
+var e=[`about`,`projects`,`skills`,`contact`];export{e as t};

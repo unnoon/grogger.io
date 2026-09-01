@@ -1,0 +1,1 @@
+"use client";import{n as e,t}from"./effect.Bo7QNGT8.js";export{t as Effect,e as Effects};

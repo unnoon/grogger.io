@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en" class="h-full antialiased dark"><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/png" href="/favicon.png"><meta name="generator" content="Astro v7.2.10"><!-- Canonical URL --><link rel="canonical" href="http://grogger.io/grogger.io/blog/post/how-to-become-a-great-programmer/"><!-- Primary Meta Tags --><title>grogger.io</title><meta name="title" content="grogger.io"><meta name="description" content="Reality is for those who lack imagination (or a VR headset)"><script>
+      // boot gate: repeat visitors (and reduced-motion users) skip the boot overlay
+      if (
+        localStorage.getItem("grogger:booted") ||
+        matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        document.documentElement.classList.add("booted");
+      }
+    </script><link rel="stylesheet" href="/grogger.io/_astro/BaseLayout.wRZCf5h-.css"><style>.light-rays-container{pointer-events:none;z-index:3;width:100%;height:100%;position:relative;overflow:hidden}
+</style></head><body class="w-full h-full bg-white dark:bg-base-950 transition-colors duration-150 dark:transition-color dark:duration-150 lowercase"><div class="fixed inset-0 pointer-events-none"><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();</script><script>(()=>{var g=Object.defineProperty;var w=(a,s,c)=>s in a?g(a,s,{enumerable:!0,configurable:!0,writable:!0,value:c}):a[s]=c;var l=(a,s,c)=>w(a,typeof s!="symbol"?s+"":s,c);var E=new Set(["__proto__","constructor","prototype"]);{let a={0:t=>y(t),1:t=>c(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(c(t)),5:t=>new Set(c(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in a?a[p](e):void 0},c=t=>t.map(s),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let r=this.querySelectorAll("astro-slot"),n={},d=this.querySelectorAll("template[data-astro-template]");for(let o of d){let i=o.closest(this.tagName);i!=null&&i.isSameNode(this)&&(n[o.getAttribute("data-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of r){let i=o.closest(this.tagName);i!=null&&i.isSameNode(this)&&(n[o.getAttribute("name")||"default"]=o.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(o){let i=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(i+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${i}`,this.getAttribute("props"),o),o}let h;await this.hydrator(this)(this.Component,u,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),r.disconnect(),this.childrenConnectedCallback()},r=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});r.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}getRetryImportUrl(e){let r=new URL(e,document.baseURI);return r.searchParams.set("astro-retry",Date.now().toString()),r.toString()}async importWithRetry(e){try{return await import(e)}catch(r){return await new Promise(n=>setTimeout(n,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let r=this.getAttribute("component-url"),n=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:r}});this.dispatchEvent(n)&&console.error(`[astro-island] Error hydrating ${r}`,e)}async start(){let e=JSON.parse(this.getAttribute("opts")),r=this.getAttribute("client");if(Astro[r]===void 0){window.addEventListener(`astro:${r}`,()=>this.start(),{once:!0});return}try{await Astro[r](async()=>{let n=this.getAttribute("renderer-url");try{let[d,{default:u}]=await Promise.all([this.importWithRetry(this.getAttribute("component-url")),n?this.importWithRetry(n):Promise.resolve({default:()=>()=>{}})]),h=this.getAttribute("component-export")||"default";if(h.includes(".")){this.Component=d;for(let m of h.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${h}`);this.Component=this.Component[m]}}else{if(E.has(h))throw new Error(`Invalid component export path: ${h}`);this.Component=d[h]}return this.hydrator=u,this.hydrate}catch(d){return this.handleHydrationError(d),()=>{}}},e,this)}catch(n){this.handleHydrationError(n)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script><astro-island uid="Z1KDXNl" component-url="/grogger.io/_astro/WaterParticles.BXiqLsca.js" component-export="default" renderer-url="/grogger.io/_astro/client.Be8vnfpa.js" props="{&quot;className&quot;:[0,&quot;absolute inset-0 size-full&quot;]}" ssr client="only" opts="{&quot;name&quot;:&quot;WaterParticles&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island><astro-island uid="Z2rWOn4" component-url="/grogger.io/_astro/LightRays.Bkk-xmNy.js" component-export="default" renderer-url="/grogger.io/_astro/client.Be8vnfpa.js" props="{&quot;raysOrigin&quot;:[0,&quot;top-center&quot;],&quot;raysColor&quot;:[0,&quot;#00ffff&quot;],&quot;raysSpeed&quot;:[0,1.5],&quot;lightSpread&quot;:[0,0.8],&quot;rayLength&quot;:[0,1.2],&quot;followMouse&quot;:[0,true],&quot;mouseInfluence&quot;:[0,0.1],&quot;noiseAmount&quot;:[0,0.1],&quot;distortion&quot;:[0,0.05],&quot;className&quot;:[0,&quot;custom-rays&quot;]}" ssr client="only" opts="{&quot;name&quot;:&quot;LightRays&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island></div><main class="w-full max-w-2xl mx-auto h-full p-4 py-16"><div class="prose prose-img:rounded-xl dark:prose-invert max-w-full prose-inline-code:bg-base-100 dark:prose-inline-code:bg-base-800 prose-inline-code:p-1 prose-inline-code:rounded-md prose-zinc prose-cyan"><div class="flex mt-8 items-center gap-x-4 text-xs"><time datetime="2024-02-08T00:00:00.000Z">Feb 8, 2024</time><div class="flex gap-x-2"><a href="/tags/astro" class="relative z-10 rounded-full bg-base-100 px-3 py-1.5 font-medium text-base-700 hover:bg-base-200 dark:bg-base-800 dark:hover:bg-base-700 dark:text-base-300 border border-base-200 dark:border-base-700">astro</a><a href="/tags/blog" class="relative z-10 rounded-full bg-base-100 px-3 py-1.5 font-medium text-base-700 hover:bg-base-200 dark:bg-base-800 dark:hover:bg-base-700 dark:text-base-300 border border-base-200 dark:border-base-700">blog</a><a href="/tags/test" class="relative z-10 rounded-full bg-base-100 px-3 py-1.5 font-medium text-base-700 hover:bg-base-200 dark:bg-base-800 dark:hover:bg-base-700 dark:text-base-300 border border-base-200 dark:border-base-700">test</a></div></div><h1>How to become a Great Programmer (or anything else)</h1><h2 id="the-one-easy-step">The one easy step:</h2>
+<p>👏 Just 👏 do 👏 the 👏 fucking 👏 thing 👏</p>
+<p>Yes, it’s that easy. <em>Practice makes perfect</em> may be clichéd but it’s absolutely true in my experience.</p>
+<p>“But how exactly do I do the thing?” you may ask. I’ll draw up a rough roadmap for learning programming assuming you currently don’t have any coding skills. This is of course a method that works for me and should be fitted to your personality/skills/the thing you want to learn. Experimentation is your friend there.</p>
+<h2 id="the-first-project">The first project</h2>
+<p>Should be something that is not super hard (so, yeah, your MMORPG idea will have to wait), otherwise anything goes (if you’re not sure if your idea is too hard, just try it, you’ll find out). Don’t have an idea? Ask Chad for some ideas: describe your skill level and any “requirements” you have like “i want to make a game” or “something that runs on my apple watch”, then use your favourite suggestion or the first one (if you can’t decide). Don’t take much longer than ~10 minutes to pick a project.</p>
+<h2 id="the-right-framework-and-language">The right framework and language</h2>
+<p>Doesn’t really matter. Pick any one (again Chad can be very helpful, describe your situation like this example: “I’m starting to learn programming and want to make a website that translates any text into emojis. whats the best framework and language to do that with?” and then when Chad gives you way to many options, pick a random one). If you don’t like it, use something else for your next project (maybe do that, even if you do like it).</p>
+<h2 id="on-tutorials-and-chad">On tutorials (and Chad)</h2>
+<p>Yes, tutorials are great and can be a good first reference point. Same goes for Chad just writing all the code for you, but while fast and easy it does sadly limit the amount you learn by quite a lot. I love Chad as much as anyone, but copy-pasting code is not the same as writing code. If you really want to follow a tutorial or Chad, a method I like to do is one-with one-solo (or something like that, I didn’t invent that, I’m sure there is an actual name for that), where first you follow along and then you repeat it, doing it yourself. My preferred way though is to look up stuff whenever you don’t know how to do a specific thing and then keep going.</p>
+<h2 id="you-just-want-me-to-fail-you-say">“You just want me to fail!”, you say</h2>
+<p>Yes! That’s exactly what I want! “Wait, what! You fucker!” But no joking, failure is where learning happens. You don’t learn to walk without first falling on your face a lot. It turns out walking is just falling over and over again and catching yourself in time. Is this metaphor still working?</p>
+<p>Anyway for me, if I start something with the mindset of “I’m gonna fail a lot doing this and that’s okay” it helps me avoid a lot of the frustration that occurs when I inevitably do get stuck with an annoying bug or can’t get something to work. That being said, don’t forget to…</p>
+<h2 id="have-fun">Have fun!</h2>
+<p>Motivation is where I often struggle as well. Again starting your journey with the explicit intent of “Yes, I want to learn something, but I also want to have fun doing it!” helps me personally. Switching from one project to another also often helps (and yes that makes both projects less likely to be a success/finished, but we don’t really care about that, we’re here to learn) as does taking breaks (but not too long otherwise you may never start again).</p>
+<h2 id="i-finished-my-project-and-its-horrible-or-i-couldnt-do-it">I finished my project and it’s horrible OR I couldn’t do it</h2>
+<p>That was always the most likely outcome! There’s a folder in my computer with my failed/abandoned projects and it’s larger than all my other folders put together. So don’t despair, just remember to…</p>
+<h2 id="reflect">Reflect</h2>
+<p>What went wrong? What did I learn? What should I do differently next time? Was my project way to ambitious for my current skill? Was it actually too easy and I didn’t really learn anything?</p>
+<h2 id="repeat">Repeat</h2>
+<p>It’s time to do it all over again. Pick a new project (varying difficulty, etc.) and off you go!</p>
+<h2 id="this-works-for-lots-of-things-for-me">This works for lots of things (for me)</h2>
+<p>So first, again the disclaimer that this works for me and doesn’t necessarily work for you in exactly the same way. But give it a try if you want and then adjust it to your liking.</p>
+<p>This also works for lots of other things apart from coding, some examples are:</p>
+<ul>
+<li>Cooking</li>
+</ul>
+<p>Start with simple recipes, once you made some that are edible, level up the difficulty, maybe let someone else try it at some point</p>
+<ul>
+<li>Languages</li>
+</ul>
+<p>Do a few weeks of doulingo, reread an easy book you’ve already read in that language, watch a tv show, chat with chad in that language, find someone to practice with and speak with them</p>
+<ul>
+<li>3D modeling</li>
+</ul>
+<p>Start with a super easy model (maybe a donut? sidenote: that guy is where I stole that one-with one-solo method from) then a harder one and so on</p>
+<ul>
+<li>Writing</li>
+</ul>
+<p>Maybe start a blog and try to write two articles a week and publish at least one (see this blog for an example)</p>
+<h2 id="on-sharing">On sharing</h2>
+<p>Sharing stuff you created can be super motivating and keep you going but it can also easily lead to perfectionism, which we want to avoid. In the end it depends on your skill level, personality and what you’re trying to learn. With this blog for example I want to learn to write better but I also want to learn to avoid perfectionism, so I kinda have to publish.</p>
+<p><em>Final note: I just want to be clear that I don’t think that I am a “Great Programmer” (though I do think I’m decent, I have been doing this for a few years), but I do think I’m somewhere on the road to becoming a “Great Programmer” (and this is probably open-ended, I’ll never reach that, as there actually is no clearly defined goal. In the end the road is the goal, always keep learning!).</em></p>
+</div></main><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><astro-island uid="iNg5N" prefix="r2" component-url="/grogger.io/_astro/Terminal.D0RyzNyA.js" component-export="default" renderer-url="/grogger.io/_astro/client.Be8vnfpa.js" props="{&quot;projects&quot;:[1,[[0,{&quot;slug&quot;:[0,&quot;inspech&quot;],&quot;name&quot;:[0,&quot;Inspech&quot;]}],[0,{&quot;slug&quot;:[0,&quot;photo-splat&quot;],&quot;name&quot;:[0,&quot;Photo Splat&quot;]}],[0,{&quot;slug&quot;:[0,&quot;collaborative-vr&quot;],&quot;name&quot;:[0,&quot;Collaborative VR&quot;]}],[0,{&quot;slug&quot;:[0,&quot;virtual-human&quot;],&quot;name&quot;:[0,&quot;Virtual Human&quot;]}],[0,{&quot;slug&quot;:[0,&quot;rampage-vr&quot;],&quot;name&quot;:[0,&quot;Rampage VR&quot;]}],[0,{&quot;slug&quot;:[0,&quot;bubble-fever&quot;],&quot;name&quot;:[0,&quot;Bubble Fever&quot;]}],[0,{&quot;slug&quot;:[0,&quot;clockclock&quot;],&quot;name&quot;:[0,&quot;ClockClock&quot;]}],[0,{&quot;slug&quot;:[0,&quot;glamour-gems&quot;],&quot;name&quot;:[0,&quot;Glamour Gems&quot;]}],[0,{&quot;slug&quot;:[0,&quot;jewel-academy&quot;],&quot;name&quot;:[0,&quot;Jewel Academy&quot;]}],[0,{&quot;slug&quot;:[0,&quot;spaced-out&quot;],&quot;name&quot;:[0,&quot;Spaced Out&quot;]}]]],&quot;posts&quot;:[1,[[0,{&quot;slug&quot;:[0,&quot;how-to-become-a-great-programmer&quot;],&quot;name&quot;:[0,&quot;How to become a Great Programmer (or anything else)&quot;]}]]]}" ssr client="load" opts="{&quot;name&quot;:&quot;Terminal&quot;,&quot;value&quot;:true}"></astro-island><astro-island uid="18WqXb" prefix="r3" component-url="/grogger.io/_astro/SoundFX.DfhxGu-E.js" component-export="default" renderer-url="/grogger.io/_astro/client.Be8vnfpa.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;SoundFX&quot;,&quot;value&quot;:true}" await-children><button type="button" aria-label="mute sound effects" aria-pressed="true" class="fixed bottom-4 right-4 z-80 font-mono text-[10px] tracking-[0.25em] text-base-500 transition-colors hover:text-accent-300"><span class="text-accent-400">snd:</span> <!-- -->on<span class="ml-1">♪</span></button><!--astro:end--></astro-island><div class="crt" aria-hidden="true"></div><div id="boot" class="fixed inset-0 z-100 flex items-center justify-center bg-black" aria-hidden="true"><pre id="boot-log" class="px-6 font-mono text-xs leading-7 text-accent-300 sm:text-sm"></pre></div><script>
+      // boot sequence (first visit only; any key/click skips)
+      (() => {
+        const boot = document.getElementById("boot");
+        if (!boot) return;
+        if (document.documentElement.classList.contains("booted")) {
+          boot.remove();
+          return;
+        }
+        const log = document.getElementById("boot-log");
+        const LINES = [
+          "grogger bios v3.0",
+          "memory check ......... 640k ok",
+          "mounting /dev/world ... ok",
+          "loading player ........ ok",
+          "starting session_",
+        ];
+        let i = 0;
+        let finished = false;
+        const done = () => {
+          if (finished) return;
+          finished = true;
+          clearInterval(t);
+          localStorage.setItem("grogger:booted", "1");
+          boot.style.transition = "opacity 0.3s ease";
+          boot.style.opacity = "0";
+          setTimeout(() => boot.remove(), 320);
+        };
+        const t = setInterval(() => {
+          log.textContent += LINES[i] + "\n";
+          if (++i >= LINES.length) setTimeout(done, 500);
+        }, 260);
+        addEventListener("keydown", done, { once: true });
+        addEventListener("pointerdown", done, { once: true });
+      })();
+
+      // konami code → glitch storm + warp gate to the frogger minigame
+      (() => {
+        const SEQ = [
+          "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
+          "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight",
+          "b", "a",
+        ];
+        let i = 0;
+        addEventListener("keydown", (e) => {
+          const t = e.target;
+          if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
+          i = e.key === SEQ[i] ? i + 1 : e.key === SEQ[0] ? 1 : 0;
+          if (i < SEQ.length) return;
+          i = 0;
+          dispatchEvent(new CustomEvent("grogger:sfx", { detail: "konami" }));
+          const html = document.documentElement;
+          html.classList.add("konami-storm");
+          setTimeout(() => html.classList.remove("konami-storm"), 1600);
+          if (document.getElementById("warp-toast")) return;
+          const toast = document.createElement("div");
+          toast.id = "warp-toast";
+          toast.innerHTML =
+            'cheat code accepted — <a href="/404">enter the warp gate →</a>';
+          document.body.appendChild(toast);
+          setTimeout(() => toast.remove(), 8000);
+        });
+      })();
+
+      console.log(
+        "%c" +
+          "  @..@\n" +
+          " (----)\n" +
+          "( >__< )\n" +
+          "^^ ~~ ^^\n" +
+          "\n" +
+          "> you found the debug room.\n",
+        "color: #4df3ff; font-family: monospace; font-size: 14px; line-height: 1.2;",
+      );
+      console.log(
+        "%cmost visitors never open this panel. you did. let's talk.\n" +
+          "%c> player.connect --via github   %chttps://github.com/unnoon/\n" +
+          "%c> psst: press ` to open the terminal. ↑↑↓↓←→←→ba does something too.",
+        "color: #ff4fd8; font-family: monospace;",
+        "color: #71717a; font-family: monospace;",
+        "color: #4df3ff; font-family: monospace;",
+        "color: #71717a; font-family: monospace;",
+        "color: #4df3ff; font-family: monospace;",
+        "color: #71717a; font-family: monospace;",
+      );
+    </script></body></html>
