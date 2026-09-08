@@ -1,0 +1,1 @@
+"use client";import{n as e,r as t,t as n}from"./SectionHeader.AiMhuz6q.js";export{n as ACCENT_GRADIENT,e as GRADIENT_TRANSITION,t as default};
